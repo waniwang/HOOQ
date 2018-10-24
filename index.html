@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <button onclick="play();">Play</button>
+</body>
+
+<script>
+  function play() {
+    if (window.webkit != undefined) {
+      var data = {
+        "contentUrl": "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_ts/master.m3u8"
+      }
+      window.webkit.messageHandlers.play.postMessage(data);
+    } else {
+      console.log("window.webkit is not defined");
+    }
+  }
+</script>
+
+</html>
